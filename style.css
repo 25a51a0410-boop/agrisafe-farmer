@@ -11,49 +11,71 @@ html {
 body {
     font-family:
         "Noto Sans Telugu",
-        "Nirmala UI",
+        "Segoe UI",
         Arial,
         sans-serif;
 
-    background: #f4faef;
+    background: #f4f8f1;
     color: #183b20;
+    line-height: 1.6;
 }
 
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 header {
-    background: #167337;
+    background: linear-gradient(
+        135deg,
+        #176b35,
+        #4caf50
+    );
+
     color: white;
 
-    padding: 14px 18px;
+    padding: 15px 5%;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
+    gap: 15px;
+
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.15);
 }
 
+
 .logo {
-    font-size: 23px;
+    font-size: 24px;
     font-weight: bold;
 }
 
+
 .language-box {
     display: flex;
+
     align-items: center;
-    gap: 5px;
+
+    gap: 6px;
 }
+
 
 .language-box button {
     border: none;
 
     background: white;
-    color: #167337;
+
+    color: #176b35;
 
     padding: 8px 12px;
 
@@ -64,36 +86,44 @@ header {
     cursor: pointer;
 }
 
+
 .language-box button.active {
-    background: #ffd54f;
-    color: #222;
+    background: #ffeb3b;
+
+    color: #183b20;
 }
 
 
-/* ================= WELCOME ================= */
+/* =========================
+   WELCOME
+========================= */
 
 .welcome {
     text-align: center;
 
-    padding: 35px 15px 25px;
+    padding: 45px 20px 35px;
 
     background:
         linear-gradient(
             180deg,
-            #dff4df,
-            #f4faef
+            #e8f7e8,
+            #f4f8f1
         );
 }
 
-.farmer {
-    font-size: 80px;
 
-    animation: farmerMove 2s infinite ease-in-out;
+.farmer {
+    font-size: 70px;
+
+    margin-bottom: 10px;
+
+    animation: farmerFloat 3s ease-in-out infinite;
 }
 
-@keyframes farmerMove {
 
-    0% {
+@keyframes farmerFloat {
+
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -101,60 +131,73 @@ header {
         transform: translateY(-8px);
     }
 
-    100% {
-        transform: translateY(0);
-    }
 }
+
 
 .welcome h1 {
-    color: #167337;
+    font-size: 38px;
 
-    font-size: 36px;
+    color: #176b35;
 
-    margin-top: 5px;
+    margin-bottom: 8px;
 }
+
 
 .welcome p {
-    font-size: 18px;
+    font-size: 19px;
 
-    color: #4d664f;
-
-    margin: 8px 0 18px;
+    margin-bottom: 20px;
 }
 
 
-/* ================= VOICE ================= */
+/* =========================
+   VOICE BUTTON
+========================= */
 
 .voice-btn {
     border: none;
 
-    background: #ffca28;
-    color: #222;
+    background: #176b35;
 
-    padding: 13px 25px;
+    color: white;
+
+    padding: 13px 24px;
 
     border-radius: 30px;
 
-    font-size: 18px;
+    font-size: 17px;
 
     font-weight: bold;
 
     cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.15);
+
+    transition: 0.2s;
 }
+
+
+.voice-btn:hover {
+    transform: scale(1.04);
+}
+
 
 .voice-btn:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
 
-/* ================= OPTIONS ================= */
+/* =========================
+   OPTIONS
+========================= */
 
 .options {
-    max-width: 1000px;
+    width: 92%;
 
-    margin: auto;
+    max-width: 1100px;
 
-    padding: 25px 15px 35px;
+    margin: 25px auto;
 
     display: grid;
 
@@ -165,10 +208,8 @@ header {
 }
 
 
-/* ================= CARDS ================= */
-
 .option-card {
-    min-height: 180px;
+    min-height: 170px;
 
     border: none;
 
@@ -176,75 +217,72 @@ header {
 
     padding: 20px 10px;
 
-    font-family: inherit;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    color: #183b20;
+    text-align: center;
 
     cursor: pointer;
 
-    display: flex;
+    color: #183b20;
 
-    flex-direction: column;
+    font-size: 19px;
 
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
+    font-weight: bold;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.08);
+        0 5px 15px rgba(0,0,0,0.10);
 
-    transition: 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
+
 
 .option-card:hover {
     transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.15);
 }
 
+
 .option-card:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
+
 
 .option-card small {
     display: block;
 
-    margin-top: 7px;
+    margin-top: 6px;
 
     font-size: 14px;
 
     font-weight: normal;
-
-    opacity: 0.8;
 }
 
+
 .big-icon {
-    font-size: 65px;
+    font-size: 55px;
 
     margin-bottom: 8px;
 }
 
 
-/* ================= CARD COLORS ================= */
+/* OPTION COLORS */
 
 .green {
-    background: #d9f4dc;
+    background: #d8f3dc;
 }
 
 .light-green {
-    background: #e8f7d9;
+    background: #e8f5e9;
 }
 
 .blue {
-    background: #d9f1ff;
+    background: #d9efff;
 }
 
 .sky {
-    background: #dff5ff;
+    background: #dff6ff;
 }
 
 .orange {
@@ -252,11 +290,11 @@ header {
 }
 
 .brown {
-    background: #eee2d1;
+    background: #eee2d0;
 }
 
 .purple {
-    background: #eee0ff;
+    background: #eee2ff;
 }
 
 .red {
@@ -264,105 +302,103 @@ header {
 }
 
 
-/* ================= MESSAGE ================= */
+/* =========================
+   MESSAGE
+========================= */
 
 .message-section {
-    padding: 10px 15px 40px;
+    width: 92%;
 
-    text-align: center;
+    max-width: 900px;
+
+    margin: 30px auto;
 }
 
+
 #messageBox {
-    max-width: 700px;
-
-    margin: auto;
-
     background: white;
 
     border-radius: 20px;
 
     padding: 25px;
 
+    text-align: center;
+
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.08);
+        0 5px 18px rgba(0,0,0,0.08);
 
-    font-size: 20px;
-
-    font-weight: bold;
+    font-size: 18px;
 }
+
 
 .message-icon {
     font-size: 45px;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
-/* ================= SCAN ================= */
+/* =========================
+   SCAN SECTION
+========================= */
 
 .scan-section {
     display: none;
 
-    padding: 50px 15px;
+    width: 92%;
+
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    padding: 30px 20px;
 
     text-align: center;
 
     background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.10);
 }
 
-.scan-section h2 {
-    color: #167337;
 
-    font-size: 30px;
+.scan-section h2 {
+    color: #176b35;
+
+    font-size: 28px;
 
     margin-bottom: 8px;
 }
 
-.scan-section > p {
-    color: #55705b;
-
-    margin-bottom: 25px;
-}
 
 .camera-box {
-    max-width: 500px;
-
-    margin: auto;
-
-    padding: 30px;
-
-    border-radius: 25px;
-
-    border: 3px dashed #76b87d;
-
-    background: #f7fff7;
+    margin-top: 20px;
 }
+
 
 .camera-large {
-    font-size: 85px;
+    font-size: 90px;
 
-    margin-bottom: 20px;
+    margin: 15px;
 }
 
 
-/* FILE INPUT */
-
-.camera-box input {
+#cropImage {
     width: 100%;
+
+    max-width: 350px;
 
     padding: 12px;
 
-    background: white;
+    border: 2px dashed #4caf50;
 
-    border: 1px solid #bbb;
+    border-radius: 15px;
 
-    border-radius: 10px;
-
-    margin-bottom: 20px;
+    background: #f4fff4;
 }
 
-
-/* PHOTO PREVIEW */
 
 .crop-preview {
     display: none;
@@ -371,31 +407,27 @@ header {
 
     max-width: 350px;
 
-    max-height: 350px;
-
-    object-fit: cover;
-
     margin: 20px auto;
 
     border-radius: 18px;
 
-    border: 3px solid #4caf50;
-
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.12);
+        0 5px 15px rgba(0,0,0,0.15);
 }
 
 
-/* SCAN BUTTON */
-
 .scan-button {
+    display: block;
+
+    margin: 20px auto;
+
     border: none;
 
-    background: #167337;
+    background: #176b35;
 
     color: white;
 
-    padding: 15px 30px;
+    padding: 14px 25px;
 
     border-radius: 30px;
 
@@ -406,144 +438,332 @@ header {
     cursor: pointer;
 }
 
-.scan-button:active {
-    transform: scale(0.95);
-}
-
-
-/* RESULT */
 
 #scanResult {
     margin-top: 20px;
-
-    font-size: 17px;
-
-    font-weight: bold;
 }
 
-.result-card {
-    background: #e7f6e9;
 
-    border-radius: 15px;
+.result-card {
+    background: #e8f5e9;
 
     padding: 20px;
 
-    margin-top: 15px;
+    border-radius: 18px;
+
+    font-size: 17px;
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================
+   GOVERNMENT SCHEMES
+========================= */
+
+.schemes-section {
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin: 50px auto;
+
+    padding: 30px 15px;
+
+    background: #f1f8e9;
+
+    border-radius: 25px;
+}
+
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.section-title .big-icon {
+    font-size: 55px;
+}
+
+
+.section-title h2 {
+    font-size: 30px;
+
+    color: #176b35;
+}
+
+
+.section-title p {
+    font-size: 17px;
+}
+
+
+.scheme-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.scheme-card {
+    background: white;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.scheme-icon {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.scheme-card h3 {
+    color: #176b35;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+
+.scheme-card p {
+    margin-bottom: 18px;
+}
+
+
+.scheme-card button {
+    border: none;
+
+    background: #176b35;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.scheme-result {
+    margin-top: 25px;
+}
+
+
+.scheme-result-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.scheme-result-card h3 {
+    color: #176b35;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+.scheme-result-card p {
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   FARMER HELP
+========================= */
+
+.farmer-help {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #e8f5e9;
+
+    margin-top: 30px;
+}
+
+
+.help-icon {
+    font-size: 55px;
+
+    margin-bottom: 8px;
+}
+
+
+.farmer-help h2 {
+    color: #176b35;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    margin-top: 30px;
-
-    background: #123d21;
+    background: #176b35;
 
     color: white;
 
     text-align: center;
 
-    padding: 30px 15px;
+    padding: 25px 15px;
+
+    margin-top: 30px;
 }
 
-footer strong {
+
+footer div {
     font-size: 22px;
-}
 
-footer p {
-    margin-top: 8px;
-
-    opacity: 0.9;
+    margin-bottom: 5px;
 }
 
 
-/* ================= TABLET ================= */
+/* =========================
+   MOBILE
+========================= */
 
-@media (max-width: 900px) {
-
-    .options {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
     header {
+        flex-direction: column;
+
         padding: 12px;
     }
 
-    .logo {
-        font-size: 19px;
-    }
-
-    .language-box button {
-        padding: 7px 9px;
-
-        font-size: 12px;
-    }
 
     .welcome {
-        padding-top: 25px;
+        padding-top: 30px;
     }
 
-    .farmer {
-        font-size: 65px;
-    }
 
     .welcome h1 {
         font-size: 30px;
     }
 
+
     .welcome p {
-        font-size: 16px;
+        font-size: 17px;
     }
+
 
     .options {
         grid-template-columns:
             repeat(2, 1fr);
 
         gap: 12px;
-
-        padding: 20px 12px;
     }
+
 
     .option-card {
-        min-height: 165px;
+        min-height: 155px;
 
-        font-size: 18px;
+        font-size: 17px;
 
-        border-radius: 18px;
+        padding: 15px 8px;
     }
 
-    .big-icon {
-        font-size: 55px;
-    }
-}
-
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width: 380px) {
-
-    .language-box button {
-        padding: 6px 8px;
-
-        font-size: 11px;
-    }
-
-    .option-card {
-        min-height: 150px;
-    }
 
     .big-icon {
         font-size: 48px;
     }
 
+
+    .scheme-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+
+    .language-box button {
+        padding: 7px 9px;
+
+        font-size: 13px;
+    }
+
+
+    .options {
+        width: 94%;
+
+        gap: 10px;
+    }
+
+
+    .option-card {
+        min-height: 145px;
+
+        border-radius: 18px;
+
+        font-size: 16px;
+    }
+
+
+    .big-icon {
+        font-size: 43px;
+    }
+
+
     .welcome h1 {
         font-size: 27px;
     }
+
+
+    .welcome p {
+        font-size: 15px;
+    }
+
+
+    .voice-btn {
+        font-size: 15px;
+
+        padding: 11px 20px;
+    }
+
+
+    .scan-section,
+    .schemes-section {
+        width: 94%;
+
+        padding: 22px 12px;
+    }
+
 }
