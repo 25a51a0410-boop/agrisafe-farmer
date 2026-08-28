@@ -12,6 +12,8 @@
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
     <div class="logo">
@@ -20,13 +22,17 @@
 
     <div class="language-box">
         🌐
-        <button id="teluguBtn" onclick="setLanguage('te')">
+
+        <button id="teluguBtn"
+                onclick="setLanguage('te')">
             తెలుగు
         </button>
 
-        <button id="englishBtn" onclick="setLanguage('en')">
+        <button id="englishBtn"
+                onclick="setLanguage('en')">
             English
         </button>
+
     </div>
 
 </header>
@@ -36,7 +42,9 @@
 
 <section class="welcome">
 
-    <div class="farmer">👨‍🌾</div>
+    <div class="farmer">
+        👨‍🌾
+    </div>
 
     <h1 id="welcomeTitle">
         రైతు మిత్రుడు
@@ -46,8 +54,15 @@
         మీ పంటకు కావలసిన సమాచారం ఇక్కడ
     </p>
 
-    <button class="voice-btn" onclick="speakWelcome()">
-        🔊 <span id="listenText">వినండి</span>
+    <button class="voice-btn"
+            onclick="speakWelcome()">
+
+        🔊
+
+        <span id="listenText">
+            వినండి
+        </span>
+
     </button>
 
 </section>
@@ -57,9 +72,15 @@
 
 <section class="options">
 
-    <button class="option-card green" onclick="openScan()">
 
-        <div class="big-icon">📷</div>
+    <!-- CROP PHOTO -->
+
+    <button class="option-card green"
+            onclick="openScan()">
+
+        <div class="big-icon">
+            📷
+        </div>
 
         <div id="cropPhoto">
             పంట ఫోటో
@@ -72,10 +93,14 @@
     </button>
 
 
+    <!-- CROP HEALTH -->
+
     <button class="option-card light-green"
             onclick="showMessage('health')">
 
-        <div class="big-icon">🌱</div>
+        <div class="big-icon">
+            🌱
+        </div>
 
         <div id="cropHealth">
             పంట ఆరోగ్యం
@@ -88,10 +113,14 @@
     </button>
 
 
+    <!-- WATER -->
+
     <button class="option-card blue"
             onclick="showMessage('water')">
 
-        <div class="big-icon">💧</div>
+        <div class="big-icon">
+            💧
+        </div>
 
         <div id="water">
             నీరు
@@ -104,10 +133,14 @@
     </button>
 
 
+    <!-- WEATHER -->
+
     <button class="option-card sky"
             onclick="showMessage('weather')">
 
-        <div class="big-icon">🌦️</div>
+        <div class="big-icon">
+            🌦️
+        </div>
 
         <div id="weather">
             వాతావరణం
@@ -120,10 +153,14 @@
     </button>
 
 
+    <!-- PESTS -->
+
     <button class="option-card orange"
             onclick="showMessage('pest')">
 
-        <div class="big-icon">🐛</div>
+        <div class="big-icon">
+            🐛
+        </div>
 
         <div id="pests">
             పురుగులు
@@ -136,10 +173,14 @@
     </button>
 
 
+    <!-- SOIL -->
+
     <button class="option-card brown"
             onclick="showMessage('soil')">
 
-        <div class="big-icon">🪨</div>
+        <div class="big-icon">
+            🪨
+        </div>
 
         <div id="soil">
             నేల
@@ -152,10 +193,14 @@
     </button>
 
 
+    <!-- GOVERNMENT SCHEMES -->
+
     <button class="option-card purple"
             onclick="showMessage('schemes')">
 
-        <div class="big-icon">🏛️</div>
+        <div class="big-icon">
+            🏛️
+        </div>
 
         <div id="schemes">
             ప్రభుత్వ పథకాలు
@@ -168,10 +213,14 @@
     </button>
 
 
+    <!-- SAFETY -->
+
     <button class="option-card red"
             onclick="showMessage('safety')">
 
-        <div class="big-icon">🛡️</div>
+        <div class="big-icon">
+            🛡️
+        </div>
 
         <div id="safety">
             భద్రత
@@ -207,7 +256,8 @@
 
 <!-- ================= CROP SCAN ================= -->
 
-<section id="scanSection" class="scan-section">
+<section id="scanSection"
+         class="scan-section">
 
     <h2 id="scanTitle">
         📷 పంట ఫోటో
@@ -220,8 +270,12 @@
 
     <div class="camera-box">
 
-        <div class="camera-large" id="cameraIcon">
+
+        <div class="camera-large"
+             id="cameraIcon">
+
             📷
+
         </div>
 
 
@@ -245,7 +299,7 @@
         >
 
 
-        <!-- CHECK BUTTON -->
+        <!-- CHECK CROP -->
 
         <button
             class="scan-button"
@@ -260,9 +314,150 @@
         </button>
 
 
+        <!-- SCAN RESULT -->
+
         <div id="scanResult"></div>
 
     </div>
+
+</section>
+
+
+<!-- ================= GOVERNMENT SCHEMES ================= -->
+
+<section id="schemesSection"
+         class="schemes-section">
+
+
+    <div class="section-title">
+
+        <div class="big-icon">
+            🏛️
+        </div>
+
+        <h2 id="schemesHeading">
+            ప్రభుత్వ పథకాలు
+        </h2>
+
+        <p id="schemesSubheading">
+            రైతులకు ఉపయోగపడే ప్రభుత్వ సహాయం
+        </p>
+
+    </div>
+
+
+    <div class="scheme-grid">
+
+
+        <!-- PM KISAN -->
+
+        <div class="scheme-card">
+
+            <div class="scheme-icon">
+                🌾
+            </div>
+
+            <h3 id="pmKisanTitle">
+                PM-KISAN
+            </h3>
+
+            <p id="pmKisanText">
+                అర్హత ఉన్న రైతులకు ఆదాయ సహాయం.
+            </p>
+
+            <button
+                onclick="showScheme('pmkisan')"
+                id="pmKisanBtn">
+
+                మరింత తెలుసుకోండి
+
+            </button>
+
+        </div>
+
+
+        <!-- CROP INSURANCE -->
+
+        <div class="scheme-card">
+
+            <div class="scheme-icon">
+                🛡️
+            </div>
+
+            <h3 id="fasalTitle">
+                పంట బీమా
+            </h3>
+
+            <p id="fasalText">
+                పంట నష్టానికి బీమా రక్షణ.
+            </p>
+
+            <button
+                onclick="showScheme('fasal')"
+                id="fasalBtn">
+
+                మరింత తెలుసుకోండి
+
+            </button>
+
+        </div>
+
+
+        <!-- SOIL HEALTH -->
+
+        <div class="scheme-card">
+
+            <div class="scheme-icon">
+                🌱
+            </div>
+
+            <h3 id="soilCardTitle">
+                Soil Health Card
+            </h3>
+
+            <p id="soilCardText">
+                నేల ఆరోగ్యం గురించి సమాచారం.
+            </p>
+
+            <button
+                onclick="showScheme('soil')"
+                id="soilCardBtn">
+
+                మరింత తెలుసుకోండి
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCHEME RESULT -->
+
+    <div id="schemeResult"
+         class="scheme-result">
+
+    </div>
+
+</section>
+
+
+<!-- ================= FARMER HELP ================= -->
+
+<section class="farmer-help">
+
+    <div class="help-icon">
+        👨‍🌾
+    </div>
+
+    <h2>
+        రైతుకు సులభమైన సహాయం
+    </h2>
+
+    <p>
+        ఒక బటన్ నొక్కండి.
+        సమాచారం చదవండి లేదా వినండి.
+    </p>
 
 </section>
 
@@ -282,7 +477,10 @@
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
