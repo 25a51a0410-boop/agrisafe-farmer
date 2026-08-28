@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriSafe - రైతు మిత్రుడు</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        🌱 AgriSafe
+    </div>
+
+    <div class="language-box">
+        🌐
+        <button id="teluguBtn" onclick="setLanguage('te')">
+            తెలుగు
+        </button>
+
+        <button id="englishBtn" onclick="setLanguage('en')">
+            English
+        </button>
+    </div>
+
+</header>
+
+
+<!-- ================= WELCOME ================= -->
+
+<section class="welcome">
+
+    <div class="farmer">👨‍🌾</div>
+
+    <h1 id="welcomeTitle">
+        రైతు మిత్రుడు
+    </h1>
+
+    <p id="welcomeText">
+        మీ పంటకు కావలసిన సమాచారం ఇక్కడ
+    </p>
+
+    <button class="voice-btn" onclick="speakWelcome()">
+        🔊 <span id="listenText">వినండి</span>
+    </button>
+
+</section>
+
+
+<!-- ================= MAIN OPTIONS ================= -->
+
+<section class="options">
+
+    <button class="option-card green" onclick="openScan()">
+
+        <div class="big-icon">📷</div>
+
+        <div id="cropPhoto">
+            పంట ఫోటో
+        </div>
+
+        <small id="takePhoto">
+            ఫోటో తీయండి
+        </small>
+
+    </button>
+
+
+    <button class="option-card light-green"
+            onclick="showMessage('health')">
+
+        <div class="big-icon">🌱</div>
+
+        <div id="cropHealth">
+            పంట ఆరోగ్యం
+        </div>
+
+        <small id="cropHealthy">
+            పంట బాగుందా?
+        </small>
+
+    </button>
+
+
+    <button class="option-card blue"
+            onclick="showMessage('water')">
+
+        <div class="big-icon">💧</div>
+
+        <div id="water">
+            నీరు
+        </div>
+
+        <small id="whenWater">
+            ఎప్పుడు నీరు?
+        </small>
+
+    </button>
+
+
+    <button class="option-card sky"
+            onclick="showMessage('weather')">
+
+        <div class="big-icon">🌦️</div>
+
+        <div id="weather">
+            వాతావరణం
+        </div>
+
+        <small id="rain">
+            వర్షం వస్తుందా?
+        </small>
+
+    </button>
+
+
+    <button class="option-card orange"
+            onclick="showMessage('pest')">
+
+        <div class="big-icon">🐛</div>
+
+        <div id="pests">
+            పురుగులు
+        </div>
+
+        <small id="pestProblem">
+            పురుగు సమస్య
+        </small>
+
+    </button>
+
+
+    <button class="option-card brown"
+            onclick="showMessage('soil')">
+
+        <div class="big-icon">🪨</div>
+
+        <div id="soil">
+            నేల
+        </div>
+
+        <small id="soilCondition">
+            నేల పరిస్థితి
+        </small>
+
+    </button>
+
+
+    <button class="option-card purple"
+            onclick="showMessage('schemes')">
+
+        <div class="big-icon">🏛️</div>
+
+        <div id="schemes">
+            ప్రభుత్వ పథకాలు
+        </div>
+
+        <small id="getSupport">
+            సహాయం పొందండి
+        </small>
+
+    </button>
+
+
+    <button class="option-card red"
+            onclick="showMessage('safety')">
+
+        <div class="big-icon">🛡️</div>
+
+        <div id="safety">
+            భద్రత
+        </div>
+
+        <small id="staySafe">
+            సురక్షితంగా ఉండండి
+        </small>
+
+    </button>
+
+</section>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section class="message-section">
+
+    <div id="messageBox">
+
+        <div class="message-icon">
+            👆
+        </div>
+
+        <p id="chooseText">
+            పైన ఉన్న ఒక బటన్‌ను ఎంచుకోండి
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CROP SCAN ================= -->
+
+<section id="scanSection" class="scan-section">
+
+    <h2 id="scanTitle">
+        📷 పంట ఫోటో
+    </h2>
+
+    <p id="scanText">
+        మీ పంట ఆకును ఫోటో తీయండి
+    </p>
+
+
+    <div class="camera-box">
+
+        <div class="camera-large" id="cameraIcon">
+            📷
+        </div>
+
+
+        <!-- CAMERA -->
+
+        <input
+            type="file"
+            id="cropImage"
+            accept="image/*"
+            capture="environment"
+            onchange="previewCrop(event)"
+        >
+
+
+        <!-- PHOTO PREVIEW -->
+
+        <img
+            id="cropPreview"
+            class="crop-preview"
+            alt="Crop Photo"
+        >
+
+
+        <!-- CHECK BUTTON -->
+
+        <button
+            class="scan-button"
+            onclick="scanCrop()">
+
+            🔍
+
+            <span id="checkText">
+                పంట చూడండి
+            </span>
+
+        </button>
+
+
+        <div id="scanResult"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        🌱 <strong>AgriSafe</strong>
+    </div>
+
+    <p id="footerText">
+        రైతు కోసం సులభమైన వ్యవసాయ సహాయం
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
