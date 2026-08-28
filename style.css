@@ -1,0 +1,549 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Noto Sans Telugu",
+        "Nirmala UI",
+        Arial,
+        sans-serif;
+
+    background: #f4faef;
+    color: #183b20;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background: #167337;
+    color: white;
+
+    padding: 14px 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.language-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.language-box button {
+    border: none;
+
+    background: white;
+    color: #167337;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.language-box button.active {
+    background: #ffd54f;
+    color: #222;
+}
+
+
+/* ================= WELCOME ================= */
+
+.welcome {
+    text-align: center;
+
+    padding: 35px 15px 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #dff4df,
+            #f4faef
+        );
+}
+
+.farmer {
+    font-size: 80px;
+
+    animation: farmerMove 2s infinite ease-in-out;
+}
+
+@keyframes farmerMove {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.welcome h1 {
+    color: #167337;
+
+    font-size: 36px;
+
+    margin-top: 5px;
+}
+
+.welcome p {
+    font-size: 18px;
+
+    color: #4d664f;
+
+    margin: 8px 0 18px;
+}
+
+
+/* ================= VOICE ================= */
+
+.voice-btn {
+    border: none;
+
+    background: #ffca28;
+    color: #222;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.voice-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* ================= OPTIONS ================= */
+
+.options {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 25px 15px 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* ================= CARDS ================= */
+
+.option-card {
+    min-height: 180px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    padding: 20px 10px;
+
+    font-family: inherit;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #183b20;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
+    transition: 0.2s;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+}
+
+.option-card:active {
+    transform: scale(0.95);
+}
+
+.option-card small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 14px;
+
+    font-weight: normal;
+
+    opacity: 0.8;
+}
+
+.big-icon {
+    font-size: 65px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ================= CARD COLORS ================= */
+
+.green {
+    background: #d9f4dc;
+}
+
+.light-green {
+    background: #e8f7d9;
+}
+
+.blue {
+    background: #d9f1ff;
+}
+
+.sky {
+    background: #dff5ff;
+}
+
+.orange {
+    background: #fff0d5;
+}
+
+.brown {
+    background: #eee2d1;
+}
+
+.purple {
+    background: #eee0ff;
+}
+
+.red {
+    background: #ffe0e0;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message-section {
+    padding: 10px 15px 40px;
+
+    text-align: center;
+}
+
+#messageBox {
+    max-width: 700px;
+
+    margin: auto;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.message-icon {
+    font-size: 45px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ================= SCAN ================= */
+
+.scan-section {
+    display: none;
+
+    padding: 50px 15px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.scan-section h2 {
+    color: #167337;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.scan-section > p {
+    color: #55705b;
+
+    margin-bottom: 25px;
+}
+
+.camera-box {
+    max-width: 500px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    border: 3px dashed #76b87d;
+
+    background: #f7fff7;
+}
+
+.camera-large {
+    font-size: 85px;
+
+    margin-bottom: 20px;
+}
+
+
+/* FILE INPUT */
+
+.camera-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    background: white;
+
+    border: 1px solid #bbb;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+/* PHOTO PREVIEW */
+
+.crop-preview {
+    display: none;
+
+    width: 100%;
+
+    max-width: 350px;
+
+    max-height: 350px;
+
+    object-fit: cover;
+
+    margin: 20px auto;
+
+    border-radius: 18px;
+
+    border: 3px solid #4caf50;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.12);
+}
+
+
+/* SCAN BUTTON */
+
+.scan-button {
+    border: none;
+
+    background: #167337;
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.scan-button:active {
+    transform: scale(0.95);
+}
+
+
+/* RESULT */
+
+#scanResult {
+    margin-top: 20px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.result-card {
+    background: #e7f6e9;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin-top: 15px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 30px;
+
+    background: #123d21;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 15px;
+}
+
+footer strong {
+    font-size: 22px;
+}
+
+footer p {
+    margin-top: 8px;
+
+    opacity: 0.9;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .options {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .language-box button {
+        padding: 7px 9px;
+
+        font-size: 12px;
+    }
+
+    .welcome {
+        padding-top: 25px;
+    }
+
+    .farmer {
+        font-size: 65px;
+    }
+
+    .welcome h1 {
+        font-size: 30px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+
+    .options {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+
+        padding: 20px 12px;
+    }
+
+    .option-card {
+        min-height: 165px;
+
+        font-size: 18px;
+
+        border-radius: 18px;
+    }
+
+    .big-icon {
+        font-size: 55px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 380px) {
+
+    .language-box button {
+        padding: 6px 8px;
+
+        font-size: 11px;
+    }
+
+    .option-card {
+        min-height: 150px;
+    }
+
+    .big-icon {
+        font-size: 48px;
+    }
+
+    .welcome h1 {
+        font-size: 27px;
+    }
+}
