@@ -483,3 +483,152 @@ window.addEventListener(
 
     }
 );
+/* =========================
+   GOVERNMENT SCHEMES
+========================= */
+
+function showScheme(type) {
+
+    const language =
+        localStorage.getItem("agrisafeLanguage") || "te";
+
+    const result =
+        document.getElementById("schemeResult");
+
+    if (!result) return;
+
+    let title = "";
+    let message = "";
+
+
+    /* PM KISAN */
+
+    if (type === "pmkisan") {
+
+        if (language === "te") {
+
+            title = "🌾 PM-KISAN";
+
+            message =
+                "అర్హత ఉన్న రైతులకు PM-KISAN ద్వారా ఆదాయ సహాయం లభిస్తుంది. అర్హత మరియు దరఖాస్తు వివరాల కోసం అధికారిక ప్రభుత్వ సమాచారాన్ని పరిశీలించండి.";
+
+        } else {
+
+            title = "🌾 PM-KISAN";
+
+            message =
+                "PM-KISAN provides income support to eligible farmers. Check official government information for eligibility and application details.";
+
+        }
+    }
+
+
+    /* CROP INSURANCE */
+
+    else if (type === "fasal") {
+
+        if (language === "te") {
+
+            title = "🛡️ పంట బీమా";
+
+            message =
+                "అర్హత ఉన్న పంటలకు బీమా రక్షణ లభించవచ్చు. పంట బీమా అర్హత, నమోదు మరియు నిబంధనల కోసం అధికారిక ప్రభుత్వ సమాచారాన్ని చూడండి.";
+
+        } else {
+
+            title = "🛡️ Crop Insurance";
+
+            message =
+                "Eligible crops may receive insurance protection. Check official government information for eligibility, registration and terms.";
+
+        }
+    }
+
+
+    /* SOIL HEALTH CARD */
+
+    else if (type === "soil") {
+
+        if (language === "te") {
+
+            title = "🌱 Soil Health Card";
+
+            message =
+                "Soil Health Card ద్వారా మీ నేలలోని పోషకాలు మరియు నేల ఆరోగ్యం గురించి సమాచారం తెలుసుకోవచ్చు.";
+
+        } else {
+
+            title = "🌱 Soil Health Card";
+
+            message =
+                "The Soil Health Card helps farmers understand soil nutrients and soil health.";
+
+        }
+    }
+
+
+    result.innerHTML = `
+
+        <div class="scheme-result-card">
+
+            <div class="scheme-icon">
+                ${type === "pmkisan"
+                    ? "🌾"
+                    : type === "fasal"
+                    ? "🛡️"
+                    : "🌱"}
+            </div>
+
+            <h3>
+                ${title}
+            </h3>
+
+            <p>
+                ${message}
+            </p>
+
+            <button
+                class="voice-btn"
+                onclick="speakScheme()">
+
+                🔊
+
+                ${language === "te"
+                    ? "వినండి"
+                    : "Listen"}
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    window.currentSchemeVoice = message;
+
+    result.scrollIntoView({
+        behavior: "smooth"
+    });
+
+
+    speak(
+        message,
+        language
+    );
+}
+
+
+/* =========================
+   SCHEME VOICE
+========================= */
+
+function speakScheme() {
+
+    const language =
+        localStorage.getItem("agrisafeLanguage") || "te";
+
+    speak(
+        window.currentSchemeVoice || "",
+        language
+    );
+}
