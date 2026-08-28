@@ -1,676 +1,350 @@
-/* ==========================================
-   AGRISAFE - LANGUAGE DATA
-========================================== */
-
 const text = {
-
     te: {
-
         welcomeTitle: "రైతు మిత్రుడు",
-
-        welcomeText:
-            "మీ పంటకు కావలసిన సమాచారం ఇక్కడ",
-
+        welcomeText: "మీ పంటకు కావలసిన సమాచారం ఇక్కడ",
         listen: "వినండి",
-
         cropPhoto: "పంట ఫోటో",
         takePhoto: "ఫోటో తీయండి",
-
         cropHealth: "పంట ఆరోగ్యం",
         cropHealthy: "పంట బాగుందా?",
-
         water: "నీరు",
         whenWater: "ఎప్పుడు నీరు?",
-
         weather: "వాతావరణం",
         rain: "వర్షం వస్తుందా?",
-
         pests: "పురుగులు",
         pestProblem: "పురుగు సమస్య",
-
         soil: "నేల",
         soilCondition: "నేల పరిస్థితి",
-
         schemes: "ప్రభుత్వ పథకాలు",
         getSupport: "సహాయం పొందండి",
-
         safety: "భద్రత",
         staySafe: "సురక్షితంగా ఉండండి",
-
-        choose:
-            "పైన ఉన్న ఒక బటన్‌ను ఎంచుకోండి",
-
-        scanTitle:
-            "📷 పంట ఫోటో",
-
-        scanText:
-            "మీ పంట ఆకును ఫోటో తీయండి",
-
-        check:
-            "పంట చూడండి",
-
-        footer:
-            "రైతు కోసం సులభమైన వ్యవసాయ సహాయం"
+        choose: "పైన ఉన్న ఒక బటన్‌ను ఎంచుకోండి",
+        scanTitle: "📷 పంట ఫోటో",
+        scanText: "మీ పంట ఆకును ఫోటో తీయండి",
+        check: "పంట చూడండి",
+        footer: "రైతు కోసం సులభమైన వ్యవసాయ సహాయం"
     },
 
-
     en: {
-
-        welcomeTitle:
-            "Farmer Friend",
-
-        welcomeText:
-            "All the information you need for your crop",
-
+        welcomeTitle: "Farmer Friend",
+        welcomeText: "All the information you need for your crop",
         listen: "Listen",
-
         cropPhoto: "Crop Photo",
         takePhoto: "Take Photo",
-
         cropHealth: "Crop Health",
         cropHealthy: "Is the crop healthy?",
-
         water: "Water",
         whenWater: "When to water?",
-
         weather: "Weather",
         rain: "Will it rain?",
-
         pests: "Pests",
         pestProblem: "Pest problem",
-
         soil: "Soil",
         soilCondition: "Soil condition",
-
         schemes: "Government Schemes",
         getSupport: "Get support",
-
         safety: "Safety",
         staySafe: "Stay safe",
-
-        choose:
-            "Choose an option above",
-
-        scanTitle:
-            "📷 Crop Photo",
-
-        scanText:
-            "Take a photo of your crop leaf",
-
-        check:
-            "Check Crop",
-
-        footer:
-            "Simple farming help for every farmer"
+        choose: "Choose an option above",
+        scanTitle: "📷 Crop Photo",
+        scanText: "Take a photo of your crop leaf",
+        check: "Check Crop",
+        footer: "Simple farming help for every farmer"
     }
-
 };
 
 
-/* ==========================================
-   LANGUAGE CHANGE
-========================================== */
+/* =========================
+   CHANGE LANGUAGE
+========================= */
 
 function setLanguage(language) {
 
-    localStorage.setItem(
-        "agrisafeLanguage",
-        language
-    );
+    localStorage.setItem("agrisafeLanguage", language);
 
     const t = text[language];
 
-    document.documentElement.lang =
-        language === "te" ? "te" : "en";
+    const setText = (id, value) => {
+        const element = document.getElementById(id);
+
+        if (element) {
+            element.textContent = value;
+        }
+    };
 
 
-    /* Welcome */
+    setText("welcomeTitle", t.welcomeTitle);
+    setText("welcomeText", t.welcomeText);
+    setText("listenText", t.listen);
 
-    document.getElementById("welcomeTitle").textContent =
-        t.welcomeTitle;
+    setText("cropPhoto", t.cropPhoto);
+    setText("takePhoto", t.takePhoto);
 
-    document.getElementById("welcomeText").textContent =
-        t.welcomeText;
+    setText("cropHealth", t.cropHealth);
+    setText("cropHealthy", t.cropHealthy);
 
-    document.getElementById("listenText").textContent =
-        t.listen;
+    setText("water", t.water);
+    setText("whenWater", t.whenWater);
 
+    setText("weather", t.weather);
+    setText("rain", t.rain);
 
-    /* Cards */
+    setText("pests", t.pests);
+    setText("pestProblem", t.pestProblem);
 
-    document.getElementById("cropPhoto").textContent =
-        t.cropPhoto;
+    setText("soil", t.soil);
+    setText("soilCondition", t.soilCondition);
 
-    document.getElementById("takePhoto").textContent =
-        t.takePhoto;
+    setText("schemes", t.schemes);
+    setText("getSupport", t.getSupport);
 
+    setText("safety", t.safety);
+    setText("staySafe", t.staySafe);
 
-    document.getElementById("cropHealth").textContent =
-        t.cropHealth;
+    setText("chooseText", t.choose);
 
-    document.getElementById("cropHealthy").textContent =
-        t.cropHealthy;
+    setText("scanTitle", t.scanTitle);
+    setText("scanText", t.scanText);
+    setText("checkText", t.check);
 
-
-    document.getElementById("water").textContent =
-        t.water;
-
-    document.getElementById("whenWater").textContent =
-        t.whenWater;
-
-
-    document.getElementById("weather").textContent =
-        t.weather;
-
-    document.getElementById("rain").textContent =
-        t.rain;
+    setText("footerText", t.footer);
 
 
-    document.getElementById("pests").textContent =
-        t.pests;
+    /* Government Schemes */
 
-    document.getElementById("pestProblem").textContent =
-        t.pestProblem;
+    setText("schemesHeading", language === "te"
+        ? "ప్రభుత్వ పథకాలు"
+        : "Government Schemes");
 
+    setText("schemesSubheading", language === "te"
+        ? "రైతులకు ఉపయోగపడే ప్రభుత్వ సహాయం"
+        : "Government support for farmers");
 
-    document.getElementById("soil").textContent =
-        t.soil;
+    setText("pmKisanTitle", "PM-KISAN");
 
-    document.getElementById("soilCondition").textContent =
-        t.soilCondition;
+    setText("pmKisanText", language === "te"
+        ? "అర్హత ఉన్న రైతులకు ఆదాయ సహాయం."
+        : "Income support for eligible farmers.");
 
-
-    document.getElementById("schemes").textContent =
-        t.schemes;
-
-    document.getElementById("getSupport").textContent =
-        t.getSupport;
-
-
-    document.getElementById("safety").textContent =
-        t.safety;
-
-    document.getElementById("staySafe").textContent =
-        t.staySafe;
+    setText("pmKisanBtn", language === "te"
+        ? "మరింత తెలుసుకోండి"
+        : "Learn More");
 
 
-    /* Message */
+    setText("fasalTitle", language === "te"
+        ? "పంట బీమా"
+        : "Crop Insurance");
 
-    document.getElementById("chooseText").textContent =
-        t.choose;
+    setText("fasalText", language === "te"
+        ? "పంట నష్టానికి బీమా రక్షణ."
+        : "Insurance protection against eligible crop losses.");
 
-
-    /* Scan */
-
-    document.getElementById("scanTitle").textContent =
-        t.scanTitle;
-
-    document.getElementById("scanText").textContent =
-        t.scanText;
-
-    document.getElementById("checkText").textContent =
-        t.check;
+    setText("fasalBtn", language === "te"
+        ? "మరింత తెలుసుకోండి"
+        : "Learn More");
 
 
-    /* Footer */
+    setText("soilCardTitle", "Soil Health Card");
 
-    document.getElementById("footerText").textContent =
-        t.footer;
+    setText("soilCardText", language === "te"
+        ? "నేల ఆరోగ్యం గురించి సమాచారం."
+        : "Information about soil health.");
+
+    setText("soilCardBtn", language === "te"
+        ? "మరింత తెలుసుకోండి"
+        : "Learn More");
 
 
-    /* Active language */
+    /* Active button */
 
-    document.getElementById("teluguBtn").classList.toggle(
-        "active",
-        language === "te"
-    );
+    const teBtn = document.getElementById("teluguBtn");
+    const enBtn = document.getElementById("englishBtn");
 
-    document.getElementById("englishBtn").classList.toggle(
-        "active",
-        language === "en"
-    );
+    if (teBtn) {
+        teBtn.classList.toggle("active", language === "te");
+    }
+
+    if (enBtn) {
+        enBtn.classList.toggle("active", language === "en");
+    }
 }
 
 
-/* ==========================================
-   VOICE FUNCTION
-========================================== */
+/* =========================
+   VOICE
+========================= */
 
 function speak(textToSpeak, language) {
 
     if (!("speechSynthesis" in window)) {
-
-        alert(
-            language === "te"
-                ? "మీ ఫోన్‌లో voice support లేదు."
-                : "Voice is not supported on this device."
-        );
-
         return;
     }
 
-
     speechSynthesis.cancel();
 
-
-    const voices =
-        speechSynthesis.getVoices();
-
-
-    let selectedVoice = null;
-
-
-    /* ======================================
-       TELUGU VOICE
-    ====================================== */
-
-    if (language === "te") {
-
-        selectedVoice =
-            voices.find(function(voice) {
-
-                return voice.lang
-                    .toLowerCase() === "te-in";
-
-            });
-
-
-        if (!selectedVoice) {
-
-            selectedVoice =
-                voices.find(function(voice) {
-
-                    return voice.lang
-                        .toLowerCase()
-                        .startsWith("te");
-
-                });
-
-        }
-
-    }
-
-
-    /* ======================================
-       ENGLISH VOICE
-    ====================================== */
-
-    else {
-
-        selectedVoice =
-            voices.find(function(voice) {
-
-                return voice.lang
-                    .toLowerCase() === "en-in";
-
-            });
-
-
-        if (!selectedVoice) {
-
-            selectedVoice =
-                voices.find(function(voice) {
-
-                    return voice.lang
-                        .toLowerCase()
-                        .startsWith("en");
-
-                });
-
-        }
-
-    }
-
-
     const utterance =
-        new SpeechSynthesisUtterance(
-            textToSpeak
-        );
-
+        new SpeechSynthesisUtterance(textToSpeak);
 
     utterance.lang =
         language === "te"
             ? "te-IN"
             : "en-IN";
 
-
-    if (selectedVoice) {
-
-        utterance.voice =
-            selectedVoice;
-
-    }
-
-
     utterance.rate = 0.8;
-
     utterance.pitch = 1;
 
-    utterance.volume = 1;
-
-
-    speechSynthesis.speak(
-        utterance
-    );
+    speechSynthesis.speak(utterance);
 }
 
 
-/* ==========================================
-   LOAD VOICES
-========================================== */
-
-if ("speechSynthesis" in window) {
-
-    speechSynthesis.onvoiceschanged =
-        function() {
-
-            speechSynthesis.getVoices();
-
-        };
-
-}
-
-
-/* ==========================================
+/* =========================
    WELCOME VOICE
-========================================== */
+========================= */
 
 function speakWelcome() {
 
     const language =
-        localStorage.getItem(
-            "agrisafeLanguage"
-        ) || "te";
-
+        localStorage.getItem("agrisafeLanguage") || "te";
 
     if (language === "te") {
 
         speak(
-
             "నమస్కారం రైతు మిత్రమా. మీ పంటకు కావలసిన సహాయం కోసం పైన ఉన్న బటన్ ఎంచుకోండి.",
-
             "te"
-
         );
 
-    }
-
-    else {
+    } else {
 
         speak(
-
             "Hello farmer. Choose an option above to get help for your crop.",
-
             "en"
-
         );
 
     }
-
 }
 
 
-/* ==========================================
-   OPEN CROP SCAN
-========================================== */
+/* =========================
+   OPEN SCAN
+========================= */
 
 function openScan() {
 
     const section =
-        document.getElementById(
-            "scanSection"
-        );
+        document.getElementById("scanSection");
 
+    if (section) {
 
-    section.style.display =
-        "block";
+        section.style.display = "block";
 
-
-    section.scrollIntoView({
-
-        behavior: "smooth"
-
-    });
-
-
-    const language =
-        localStorage.getItem(
-            "agrisafeLanguage"
-        ) || "te";
-
-
-    if (language === "te") {
-
-        speak(
-
-            "మీ పంట ఆకును ఫోటో తీయండి.",
-
-            "te"
-
-        );
-
-    }
-
-    else {
-
-        speak(
-
-            "Take a photo of your crop leaf.",
-
-            "en"
-
-        );
+        section.scrollIntoView({
+            behavior: "smooth"
+        });
 
     }
 
 }
 
 
-/* ==========================================
+/* =========================
    PHOTO PREVIEW
-========================================== */
+========================= */
 
 function previewCrop(event) {
 
-    const file =
-        event.target.files[0];
+    const file = event.target.files[0];
 
-
-    if (!file) {
-
-        return;
-
-    }
-
+    if (!file) return;
 
     const preview =
-        document.getElementById(
-            "cropPreview"
-        );
-
+        document.getElementById("cropPreview");
 
     const cameraIcon =
-        document.getElementById(
-            "cameraIcon"
-        );
+        document.getElementById("cameraIcon");
 
+    if (preview) {
 
-    const result =
-        document.getElementById(
-            "scanResult"
-        );
+        preview.src =
+            URL.createObjectURL(file);
 
-
-    preview.src =
-        URL.createObjectURL(file);
-
-
-    preview.style.display =
-        "block";
-
-
-    cameraIcon.style.display =
-        "none";
-
-
-    result.innerHTML =
-        "";
-
-
-    const language =
-        localStorage.getItem(
-            "agrisafeLanguage"
-        ) || "te";
-
-
-    if (language === "te") {
-
-        speak(
-
-            "మీ పంట ఫోటో వచ్చింది. ఇప్పుడు పంట చూడండి బటన్ నొక్కండి.",
-
-            "te"
-
-        );
-
+        preview.style.display = "block";
     }
 
-    else {
-
-        speak(
-
-            "Your crop photo is ready. Now press the check crop button.",
-
-            "en"
-
-        );
-
+    if (cameraIcon) {
+        cameraIcon.style.display = "none";
     }
 
 }
 
 
-/* ==========================================
+/* =========================
    CROP CHECK
-========================================== */
+========================= */
 
 function scanCrop() {
 
     const input =
-        document.getElementById(
-            "cropImage"
-        );
-
+        document.getElementById("cropImage");
 
     const result =
-        document.getElementById(
-            "scanResult"
-        );
-
+        document.getElementById("scanResult");
 
     const language =
-        localStorage.getItem(
-            "agrisafeLanguage"
-        ) || "te";
+        localStorage.getItem("agrisafeLanguage") || "te";
 
 
-    if (!input.files.length) {
+    if (!input || !input.files.length) {
 
-        const message =
-            language === "te"
-                ? "⚠️ ముందుగా పంట ఫోటో తీయండి."
-                : "⚠️ Please take a crop photo.";
+        if (result) {
 
+            result.innerHTML =
+                language === "te"
+                    ? "⚠️ ముందుగా పంట ఫోటో తీయండి."
+                    : "⚠️ Please take a crop photo.";
 
-        result.innerHTML =
-            message;
-
-
-        speak(
-
-            language === "te"
-                ? "ముందుగా పంట ఫోటో తీయండి."
-                : "Please take a crop photo.",
-
-            language
-
-        );
-
+        }
 
         return;
+    }
+
+
+    if (result) {
+
+        result.innerHTML =
+            language === "te"
+                ? "🔍 పంటను పరిశీలిస్తున్నాము..."
+                : "🔍 Checking your crop...";
 
     }
 
 
-    result.innerHTML =
-        language === "te"
-            ? "🔍 పంటను పరిశీలిస్తున్నాము..."
-            : "🔍 Checking your crop...";
-
-
     setTimeout(function() {
 
-        if (language === "te") {
+        if (result) {
 
-            result.innerHTML = `
-
-                <div class="result-card">
-
-                    🌱 పంట ఫోటో వచ్చింది
-
-                    <br><br>
-
-                    📷 మీ ఫోటో సిద్ధంగా ఉంది.
-
-                    <br><br>
-
-                    🤖 తర్వాతి దశలో AI ద్వారా
-                    పంట సమస్యను గుర్తిస్తాం.
-
-                </div>
-
-            `;
-
-
-            speak(
-
-                "మీ పంట ఫోటో వచ్చింది. తర్వాతి దశలో AI ద్వారా పంట సమస్యను గుర్తిస్తాం.",
-
-                "te"
-
-            );
-
-        }
-
-        else {
-
-            result.innerHTML = `
-
-                <div class="result-card">
-
-                    🌱 Crop photo received
-
-                    <br><br>
-
-                    📷 Your photo is ready.
-
-                    <br><br>
-
-                    🤖 In the next step,
-                    AI will identify the crop problem.
-
-                </div>
-
-            `;
-
-
-            speak(
-
-                "Your crop photo has been received. In the next step, AI will identify the crop problem.",
-
-                "en"
-
-            );
+            result.innerHTML =
+                language === "te"
+                    ? `
+                        <div class="result-card">
+                            🌱 పంట ఫోటో వచ్చింది
+                            <br><br>
+                            📷 మీ ఫోటో సిద్ధంగా ఉంది.
+                            <br><br>
+                            🤖 తర్వాతి దశలో AI ద్వారా
+                            పంట సమస్యను గుర్తిస్తాం.
+                        </div>
+                      `
+                    : `
+                        <div class="result-card">
+                            🌱 Crop photo received
+                            <br><br>
+                            📷 Your photo is ready.
+                            <br><br>
+                            🤖 In the next step,
+                            AI will identify the crop problem.
+                        </div>
+                      `;
 
         }
 
@@ -679,10 +353,133 @@ function scanCrop() {
 }
 
 
-/* ==========================================
-   FARMER INFORMATION
-========================================== */
+/* =========================
+   INFORMATION
+========================= */
 
 function showMessage(type) {
 
-    const
+    const language =
+        localStorage.getItem("agrisafeLanguage") || "te";
+
+    const result =
+        document.getElementById("messageBox");
+
+    let message = "";
+
+
+    if (language === "te") {
+
+        if (type === "health")
+            message = "🌱 పంట ఆరోగ్యం తెలుసుకోవడానికి పంట ఫోటో తీయండి.";
+
+        if (type === "water")
+            message = "💧 నీరు ఇవ్వడానికి ముందు నేల తేమను చూడండి.";
+
+        if (type === "weather")
+            message = "🌦️ వాతావరణ సమాచారం త్వరలో ఇక్కడ కనిపిస్తుంది.";
+
+        if (type === "pest")
+            message = "🐛 పురుగు సమస్య ఉంటే పంట ఫోటో తీయండి.";
+
+        if (type === "soil")
+            message = "🪨 నేల పరిస్థితి గురించి సమాచారం త్వరలో ఇక్కడ కనిపిస్తుంది.";
+
+        if (type === "schemes")
+            message = "🏛️ రైతులకు ఉపయోగపడే ప్రభుత్వ పథకాలు ఇక్కడ చూపిస్తాం.";
+
+        if (type === "safety")
+            message = "🛡️ వ్యవసాయ మందులు వాడేటప్పుడు భద్రతా సూచనలు పాటించండి.";
+
+    } else {
+
+        if (type === "health")
+            message = "🌱 Take a crop photo to check crop health.";
+
+        if (type === "water")
+            message = "💧 Check soil moisture before watering.";
+
+        if (type === "weather")
+            message = "🌦️ Weather information will appear here.";
+
+        if (type === "pest")
+            message = "🐛 Take a crop photo if you see a pest problem.";
+
+        if (type === "soil")
+            message = "🪨 Soil information will appear here.";
+
+        if (type === "schemes")
+            message = "🏛️ Useful government farmer schemes will appear here.";
+
+        if (type === "safety")
+            message = "🛡️ Follow safety instructions when using farm products.";
+
+    }
+
+
+    if (result) {
+
+        result.innerHTML = `
+
+            <div class="message-icon">
+                🔊
+            </div>
+
+            <p>
+                ${message}
+            </p>
+
+            <br>
+
+            <button
+                class="voice-btn"
+                onclick="speakCurrentMessage()">
+
+                🔊
+                ${language === "te" ? "వినండి" : "Listen"}
+
+            </button>
+
+        `;
+
+    }
+
+
+    window.currentVoice = message;
+
+    speak(message, language);
+
+}
+
+
+/* =========================
+   MESSAGE VOICE
+========================= */
+
+function speakCurrentMessage() {
+
+    const language =
+        localStorage.getItem("agrisafeLanguage") || "te";
+
+    speak(
+        window.currentVoice || "",
+        language
+    );
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        setLanguage(
+            localStorage.getItem("agrisafeLanguage") || "te"
+        );
+
+    }
+);
